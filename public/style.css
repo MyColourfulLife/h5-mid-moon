@@ -24,22 +24,27 @@ html {
   height: 100%;
   width: 100%;
   background: url(./images/01.png) no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  background-color: black;
+
 }
 
 .page-two {
   height: 100%;
   width: 100%;
   background: url(./images/02.png) no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  background-color:rgb(0, 0, 30);
+  position: absolute;
 }
 
 .page-three {
   height: 100%;
   width: 100%;
-  background-color: purple;
+  background-color:rgb(232, 227, 231);
   background: url(./images/03.png) no-repeat;
   background-size: 100% 100%;
+  margin-top: 160%;
 }
 
 .page-four {
@@ -68,7 +73,7 @@ html {
   width: 103px;
   height: 30px;
   background: url(./images/clicktosend.png) no-repeat;
-  background-size: 100%, 100%;
+  background-size: 100%, auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -82,7 +87,6 @@ html {
 
 .footer-contianer {
   text-align: center;
-  padding-top: 5%;
 }
 
 h5 img {
@@ -164,3 +168,29 @@ p {
   position: absolute;
   overflow: hidden;
 }
+
+.page-one button{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  top: 48%;
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0);
+  outline:none;
+  border: none;
+}
+
+.page-two img {
+  width: 20%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  left: 40%;
+  top: 70%;
+  position: absolute;
+}
+
