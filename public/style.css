@@ -194,3 +194,7 @@ p {
   position: absolute;
 }
 
+body {
+  /* 禁止页面滚动 */
+  /* overflow: hidden; */
+}
