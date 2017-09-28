@@ -1,3 +1,6 @@
+
+
+// 参数配置
 var images = [];
 for (var i = 1; i <= 4; i++) {
   images.push(`./images/0${i}.png`);
@@ -11,10 +14,11 @@ var sharedPerson = {
          明月装饰了你的窗子,
          你装饰了别人的梦.`
 };
-
 var timer2 = null;
 
 
+
+// vue
 var app = new Vue({
   el: "#app",
   data: {
@@ -62,12 +66,56 @@ var app = new Vue({
     click_crama: function(event) {
       console.log("wanna open carma");
       $('#page3').attr('hidden',false);
-      $('#page3').addClass('animated slideInUp');
+     
+
+      // 1. 获取图像
+
+      wx.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+        var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+
+      // 2. 拿到图片 将图片上传
+      wx.uploadImage({
+        localId: '', // 需要上传的图片的本地ID，由chooseImage接口获得
+        isShowProgressTips: 1, // 默认为1，显示进度提示
+        success: function (res) {
+            var serverId = res.serverId; // 返回图片的服务器端ID
+
+
+            // 3. 图像识别服务器验证 也可能是 服务器短 验证
+
+            // 如果拿到了图片地址 请求服务器验证
+            axios.get().then(
+              // 如果成功，
+             function (res) {
+              //  1. 显示下一页 需要获取的数据 包括 别人的话 弹幕 等 网页加载完就先请求，到时候只是显示数据
+              $('#page3').addClass('animated slideInUp');
+
+             }
+
+
+            ).catch();
+
+
+
+        }
+    });
+
+
+        },
+        fail:function(err){
+          console.log(err);
+        }
+    });
     },
     click_send: function(event) {
       console.log("点我发送");
       $('#page4').attr('hidden',false);
       $('#page4').addClass('animated slideInUp');
+
       // donmutwo();
       // var timer = setInterval(donmutwo,1000);
     },
@@ -181,3 +229,5 @@ function donmutwo() {
 }
 
 donmutwo();
+
+
