@@ -57,18 +57,19 @@ var app = new Vue({
       // this 指当前 app实例 就是上面 var app = 。。。
       console.log('到下一页');
       $('#page2').attr('hidden',false);
-      $('#page2').addClass('animated bounceInUp');
+      $('#page2').addClass('animated slideInUp');
     },
     click_crama: function(event) {
       console.log("wanna open carma");
       $('#page3').attr('hidden',false);
-      $('#page3').addClass('animated bounceInUp');
+      $('#page3').addClass('animated slideInUp');
     },
     click_send: function(event) {
       console.log("点我发送");
       $('#page4').attr('hidden',false);
-      $('#page4').addClass('animated bounceInUp');
-      donmutwo();
+      $('#page4').addClass('animated slideInUp');
+      // donmutwo();
+      // var timer = setInterval(donmutwo,1000);
     },
     get_allwords: function() {},
     startDm: function() {
@@ -148,14 +149,18 @@ function getRandomIntInclusive(min, max) {
 // app.startDm();
 
 
+
+
+
+
 function donmutwo() {
-  $("danmu").danmu({
+   $("danmu").danmu({
     height: 200,  //弹幕区高度
     width: 640,   //弹幕区宽度
     zindex :100,   //弹幕区域z-index属性
-    speed:7000,      //滚动弹幕的默认速度，这是数值值得是弹幕滚过每672像素所需要的时间（毫秒）
-    sumTime:655350,   //弹幕流的总时间
-    danmuLoop:false,   //是否循环播放弹幕
+    speed:10000,      //滚动弹幕的默认速度，这是数值值得是弹幕滚过每672像素所需要的时间（毫秒）
+    sumTime:65535,   //弹幕流的总时间
+    danmuLoop:true,   //是否循环播放弹幕
     defaultFontColor:"#FFFFFF",   //弹幕的默认颜色
     fontSizeSmall:16,     //小弹幕的字号大小
     FontSizeBig:24,       //大弹幕的字号大小
@@ -165,24 +170,14 @@ function donmutwo() {
     positionOptimize:false,         //是否位置优化，位置优化是指像AB站那样弹幕主要漂浮于区域上半部分
     
     maxCountInScreen: 6,   //屏幕上的最大的显示弹幕数目,弹幕数量过多时,优先加载最新的。
-    maxCountPerSec: 5      //每分秒钟最多的弹幕数目,弹幕数量过多时,优先加载最新的。
+    maxCountPerSec: 10,      //每分秒钟最多的弹幕数目,弹幕数量过多时,优先加载最新的。
     });
-  
-    $("#danmu").danmu("addDanmu",[
-      { text:"巴拉" ,color:"black",size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉" ,color:"black" ,size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉芭芭拉" , color:"black" ,size:1,position:0,time:5},
-     { text:"巴拉" ,color:"black",size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉" ,color:"black" ,size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉芭芭拉" , color:"black" ,size:1,position:0,time:5},
-     { text:"巴拉" ,color:"black",size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉" ,color:"black" ,size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉芭芭拉" , color:"black" ,size:1,position:0,time:5},
-     { text:"巴拉" ,color:"black",size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉" ,color:"black" ,size:1,position:0,time:5}
-     ,{ text:"巴拉巴拉芭芭拉" , color:"black" ,size:1,position:0,time:5}
-   ])
-  
-   $('#danmu').danmu('danmuStart');
+  $("#danmu").danmu("addDanmu",[
+    { text:"巴拉" ,color:"black",size:1,position:0,time: 1},
+    { text:"jerk" ,color:"black",size:1,position:0,time:10},
+    { text:"yami" ,color:"black",size:1,position:0,time:20}
+ ])
+ $('#danmu').danmu('danmuStart');
 }
 
+donmutwo();
