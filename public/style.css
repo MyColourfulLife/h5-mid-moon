@@ -36,6 +36,7 @@ html {
   background-size: 100% auto;
   background-color:rgb(0, 0, 30);
   position: absolute;
+  top: 0;
 }
 
 .page-three {
@@ -44,7 +45,8 @@ html {
   background-color:rgb(232, 227, 231);
   background: url(./images/03.png) no-repeat;
   background-size: 100% 100%;
-  margin-top: 160%;
+  top: 0;
+  position: absolute;
 }
 
 .page-four {
@@ -53,6 +55,8 @@ html {
   background-color: purple;
   background: url(./images/03.png) no-repeat;
   background-size: 100% 100%;
+  top: 0;
+  position: absolute;
 }
 
 .pre-say-contianer {
@@ -197,4 +201,8 @@ p {
 body {
   /* 禁止页面滚动 */
   /* overflow: hidden; */
+}
+
+.animated {
+  height: 100%;
 }
