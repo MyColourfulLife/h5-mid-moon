@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>月亮代表我的心</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="./javascripts/vue.min.js"></script>
+  <script src="./javascripts/jquery-3.2.1.min.js"></script>
+  <script src="./javascripts/jquery.danmu.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./swiper-3.4.2.min.css">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  
+  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="container wrap">
+
+        <!-- 第一页 -->
+
+        <div class="page-one item ">
+            <button v-on:click="click_moon" class="">
+                    <!-- 点击月亮 -->
+            </button>
+
+        </div>
+
+        <!-- 第二页 -->
+        <div class="page-two item" id="page2" hidden=true>
+
+          <img src="images/carma.png" v-on:click="click_crama">
+
+        </div>
+
+
+        <!-- 第三页 -->
+        <div class="page-three item" id="page3" hidden=true>
+
+          <div class="empty"></div>
+
+          <div class="pre-say-contianer">
+
+
+            <div class="showwordempty">
+
+            </div>
+
+            <div class="showwords">
+              <p>
+                {{sharedPerson.words}}
+              </p>
+            </div>
+          </div>
+
+          <div class="sharePerson">
+            <span><img v-bind:src="sharedPerson.avator" alt="">{{sharedPerson.nickname}}</span>
+          </div>
+
+          <div class="tips">
+            <h5>#是不是有什么话想对某人说，让月亮帮你送达吧!#</h5>
+          </div>
+
+          <button v-on:click="click_send" class="btn btn-default click_send">
+                </button>
+        </div>
+
+        <!-- 第四页 -->
+        <div class="page-four item" id="page4" hidden=true>
+
+          <div class="empty"></div>
+
+          <div class="pre-say-contianer">
+
+            <div class="showwordempty">
+
+            </div>
+            <div class="input-content">
+              <input type="text" class="form-control" placeholder="要来一发吗？" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="shareTips">
+              <h5>输入完成后点击右上角分享至朋友或朋友圈</h5>
+            </div>
+
+          </div>
+          <!-- 弹幕区 -->
+          <div class="danmuArea">
+            <div id="danmu"></div>
+          </div>
+
+          <div class="footer">
+            <div class="footer-contianer">
+              <h5><img src="./images/bearlogo.png" alt="">谷熊科技--链接这座城市每个人的故事</h5>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+  </div>
+
+  <script src="./javascripts/swiper-3.4.2.min.js"></script>
+  <script src="./javascripts/iSlider.js"></script>
+  <script src="./javascripts/content.js"></script>
+  
+
+
+
+</body>
+
+</html>
+
+<script>
+  // new iSlider({
+  //   wrap: '.wrap',
+  //   item: '.item',
+  //   onslide: function (index) {
+  //     console.info(index)
+  //   }
+  // });
+
+</script>
