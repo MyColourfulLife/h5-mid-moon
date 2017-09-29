@@ -59,13 +59,14 @@
 
             <div class="showwords">
               <p>
-                {{sharedPerson.words}}
+                  <%= words %>
               </p>
             </div>
           </div>
 
           <div class="sharePerson">
-            <span><img v-bind:src="sharedPerson.avator" alt="">{{sharedPerson.nickname}}</span>
+              
+            <span><img src="<%= avator %>" alt=""><%= nickname %></span>
           </div>
 
           <div class="tips">

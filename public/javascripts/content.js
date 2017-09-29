@@ -5,7 +5,7 @@ var images = [];
 for (var i = 1; i <= 4; i++) {
   images.push(`./images/0${i}.png`);
 }
-
+// 获取 shareperson信息
 var sharedPerson = {
   nickname: "沉香",
   avator: "images/sharedavator.jpg",
@@ -15,8 +15,6 @@ var sharedPerson = {
          你装饰了别人的梦.`
 };
 var timer2 = null;
-
-
 
 // vue
 var app = new Vue({
