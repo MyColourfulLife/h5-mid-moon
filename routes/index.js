@@ -10,7 +10,7 @@ router.use(function (req,res,next) {
 router.get('/wechatconfig',function (req,res) {
 // 获取微信注册配置信息
   var requesturl = req.url;
- var configurl = requesturl.split("xxconfigurl=")[1].split('#')[0];
+  var configurl = requesturl.split("xxconfigurl=")[1].split('#')[0];
   var config = get_config(configurl);
   res.send(config);
 });
@@ -39,11 +39,29 @@ router.get('/', function(req, res, next) {
     nickname = req.query.nickname
   }
 
+  // var base_url = "http://275640e2.ngrok.io";
+
+  // var requesturl = req.originalUrl;
+  // var configurl = base_url + requesturl.split('#')[0];
+  
+  // var config = get_config(configurl);
+  // console.log('请求的url',requesturl,'要配置的url',configurl,'获得的配置',config);
+
   // 使用模型渲染网页
-  res.render('index', {
+  res.render('index', { 
     avator:avator,
     words:words,
-    nickname:nickname
+    nickname:nickname,
+    // wxconfig:{
+    //   jsapi_ticket:config.jsapi_ticket,
+    //   nonceStr:config.nonceStr,
+    //   timestamp:config.timestamp,
+    //   url:config.url,
+    //   signature:config.signature,
+    //   appId:config.appId,
+    //   token:config.token,
+    //   jsApiList:config.jsApiList
+    // }
   });
 });
 

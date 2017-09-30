@@ -1,3 +1,4 @@
+
 // 参数配置
 var images = [];
 for (var i = 1; i <= 4; i++) {
@@ -82,21 +83,34 @@ var app = new Vue({
               var serverId = res.serverId; // 返回图片的服务器端ID
 
               var imgurl = `http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=${wxglobleconfig.token}&media_id=${serverId}`
+              // 3. 如果拿到了图片地址 请求服务器验证
 
-              window.location.href=imgurl;
-              // 3. 图像识别服务器验证 也可能是 服务器短 验证
+              
+              var encodeurl = encodeURIComponent(imgurl);
 
-              // 如果拿到了图片地址 请求服务器验证
+              var ismoonurl = `http://119.23.153.216:80/api/get_image_class_url?image_url=${encodeurl}&model_name=moon_model`;
+              // var ismoonurl = 'http://119.23.153.216:80/api/get_image_class_url?image_url=http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=ACTA4Kzej771dzDcgNwS7pOxsqspovdJ7FxA30bckrCKafIQcg-NXbxUE6MZGzbb_mupYE59pItBQyVySYZOsAVbyeXhFMATzEKMuWFoansOHwknSMNhFj7oDuNIX6JYWVUfAHAPON%26media_id=FOHp54Yw5nGAZpDwH_OJHnjfcNRXqp-FRlXqbqvFCsYpaxKhYLPp7nZOHo5GbFyB&model_name=moon_model';
+
+
               axios
-                .get()
+                .get(ismoonurl)
                 .then(
                   // 如果成功，
                   function(res) {
                     //  1. 显示下一页 需要获取的数据 包括 别人的话 弹幕 等 网页加载完就先请求，到时候只是显示数据
-                    $("#page3").addClass("animated slideInUp");
+                    alert(res);
+                  //   if (res.data.recResult.imageClass === 'moon') {
+                  //     $("#page3").addClass("animated slideInUp");
+                  //   } else if( res.data.recResult.imageClass === 'other'){
+                  //    alert('亲，这不是月亮吧，再换个试试');
+                  //   } else {
+                  //     alert('亲，好像出问题，你可以换个试试');
+                  //   }
                   }
                 )
-                .catch();
+                .catch(function (err) {
+                  alert('唉哟，出错了:<',err);
+                });
             }
           });
         },
