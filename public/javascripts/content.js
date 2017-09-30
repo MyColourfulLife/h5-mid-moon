@@ -233,18 +233,3 @@ function donmutwo() {
 
 donmutwo();
 
-//***************************************************************** */
-// 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
-wx.onMenuShareTimeline({
-  title: "中秋了，想说点啥", // 分享标题
-  link: "http://www.id-bear.com/node/moon/moon?name=小明&words=我想对你说", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-  imgUrl: "images/sharedavator.jpg", // 分享图标
-  success: function() {
-    // 用户确认分享后执行的回调函数
-    alert('用户确认分享');
-  },
-  cancel: function() {
-    // 用户取消分享后执行的回调函数
-    alert('用户取消分享');
-  }
-});
