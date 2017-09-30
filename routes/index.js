@@ -49,20 +49,20 @@ var encodeurl = encodeURIComponent(imgurl);
   });
 });
 
-router.get('/share',function (req,res) {
+// router.get('/share',function (req,res) {
   
-      var words = req.query.saytomoon;
+//       var words = req.query.saytomoon;
   
-      if (!words || words === "undefined") {
-        res.send("<h3>你的心一片空白</h3>");
-        return;
-      }
+//       if (!words || words === "undefined") {
+//         res.send("<h3>你的心一片空白</h3>");
+//         return;
+//       }
   
-      res.render('share.ejs',{
-        shareUrl:`http://www.id-bear.com/node/moon/moon?saytomoon=${words}`
-      });
+//       res.render('share.ejs',{
+//         shareUrl:`http://www.id-bear.com/node/moon/moon?saytomoon=${words}`
+//       });
   
-    });
+//     });
 
 
 /* GET home page. */
@@ -71,7 +71,7 @@ router.get('/', function(req, res, next) {
 // 默认数据
   var avator = "images/sharedavator.jpg";
   var words = "爸，我是真的好想你";
-  var nickname = "撒哈拉";
+  var nickname = "你的好友刚刚说";
 
   //微信服务器校验
   if (req.query.echostr) {
