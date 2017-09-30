@@ -1,0 +1,18 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+#bgmimg {
+    height: 100%;
+    width: 100%;
+    background: url(images/H5.jpg?1) no-repeat;
+    background-size: 100% auto;
+  }
+
+  html {
+      height: 100%;
+  }
+
+  * {
+      margin: 0px;
+  }
