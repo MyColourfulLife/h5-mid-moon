@@ -31,14 +31,17 @@ router.get('/ismoon',function (req,res) {
   }
   
   var requesturl = `http://119.23.153.216:80/api/get_image_class_url?image_url=${imgurl}&model_name=moon_model`
+  console.log('要识别的url',requesturl);
   axios.get(requesturl).then(function (res) {
     
     console.log(res);
+
     res.json({
       isMoon:res.data.recResult.imageClass === "moon"
     });
 
   }).chatch(function (err) {
+    console.log(err);
     res.send(err);
   });
 });

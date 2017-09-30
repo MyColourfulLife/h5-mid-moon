@@ -95,13 +95,16 @@ var app = new Vue({
                 function(res) {
                   //  1. 显示下一页 需要获取的数据 包括 别人的话 弹幕 等 网页加载完就先请求，到时候只是显示数据
                   alert(res);
-                  if (res.data.recResult.imageClass === 'moon') {
-                    $("#page3").addClass("animated slideInUp");
-                  } else if( res.data.recResult.imageClass === 'other'){
-                   alert('亲，这不是月亮吧，再换个试试');
-                  } else {
+                  if (res.data.message) {
                     alert('亲，好像出问题，你可以换个试试');
+                    return;
                   }
+                  if (res.data.isMoon) {
+                    $("#page3").addClass("animated slideInUp");
+                  }else {
+                    alert('亲，这不是月亮吧，再换个试试');
+                  }
+
                 }
               )
               .catch(function (err) {
