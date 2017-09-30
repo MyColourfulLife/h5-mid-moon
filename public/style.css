@@ -5,6 +5,14 @@
   margin: 0px;
 }
 
+.mycontainer {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+
 body {
   height: 100%;
   width: 100%;
@@ -101,8 +109,10 @@ h5 img {
 
 .sharePerson {
   margin-top: 10%;
-  text-align: center;
+  text-align: right;
   vertical-align: middle;
+  color: white;
+  padding-right: 20%;
 }
 
 span img {
@@ -112,7 +122,7 @@ span img {
 }
 
 span {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .showwordempty {
@@ -127,6 +137,7 @@ span {
   float: right;
   text-align: left;
   vertical-align: middle;
+  color: white;
 }
 
 p {
@@ -190,7 +201,7 @@ p {
 }
 
 .page-two img {
-  width: 20%;
+  width: 15%;
   height: auto;
   margin-left: auto;
   margin-right: auto;

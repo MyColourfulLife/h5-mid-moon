@@ -53,8 +53,9 @@ router.get('/', function(req, res, next) {
 
 // 默认数据
   var avator = "images/sharedavator.jpg";
-  var words = "都云作者痴，谁解其中味";
-  var nickname = "山巅思";
+  var words = "爸，我是真的好想你";
+  var nickname = "撒哈拉";
+
 
   //微信服务器校验
   if (req.query.echostr) {
@@ -69,6 +70,7 @@ router.get('/', function(req, res, next) {
     avator = req.query.avator,
     words = req.query.words,
     nickname = req.query.nickname
+    
   }
 
   // var base_url = "http://275640e2.ngrok.io";

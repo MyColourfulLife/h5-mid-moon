@@ -65,6 +65,8 @@ var app = new Vue({
       console.log("wanna open carma");
       $("#page3").attr("hidden", false);
 
+      $("#page3").addClass("animated slideInUp");
+
       // 1. 获取图像
 
       wx.chooseImage({
