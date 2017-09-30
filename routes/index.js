@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var get_config = require("../serverjs/check_sign.js");
+var axios = require('axios');
 
 router.use(function (req,res,next) {
   console.log('收到请求',req.url);
@@ -14,6 +15,34 @@ router.get('/wechatconfig',function (req,res) {
   var config = get_config(configurl);
   res.send(config);
 });
+
+/**
+ * 判断是否是月亮
+ * 需要图片地址参数
+ */
+router.get('/ismoon',function (req,res) {
+  
+  var imgurl = req.query.imgurl;
+  if (!imgurl) {
+    res.json({
+      message:'图片地址为空'
+    });
+    return;
+  }
+  
+  var requesturl = `http://119.23.153.216:80/api/get_image_class_url?image_url=${imgurl}&model_name=moon_model`
+  axios.get(requesturl).then(function (res) {
+    
+    console.log(res);
+    res.json({
+      isMoon:res.data.recResult.imageClass === "moon"
+    });
+
+  }).chatch(function (err) {
+    res.send(err);
+  });
+});
+
 
 
 /* GET home page. */
