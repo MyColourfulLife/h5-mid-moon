@@ -222,3 +222,8 @@ body {
 .animated {
   height: 100%;
 }
+
+.danmuArea img {
+  width: 30px;
+  height: 30px;
+}

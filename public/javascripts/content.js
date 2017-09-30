@@ -233,5 +233,5 @@ function donmutwo() {
   $("#danmu").danmu("danmuStart");
 }
 
-donmutwo();
+// donmutwo();
 
