@@ -22,7 +22,7 @@ router.get('/',function (req,res) {
       }
 
       if (req.query.from) {
-          res.render('index.js',{ 
+          res.render('index.ejs',{ 
             avator:"",
             words:words,
             nickname:"——你的好友对你说"
