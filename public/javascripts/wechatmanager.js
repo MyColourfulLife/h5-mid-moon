@@ -52,10 +52,12 @@ wx.onMenuShareTimeline({
   imgUrl: "images/sharedavator.jpg", // 分享图标
   success: function() {
     // 用户确认分享后执行的回调函数
+    console.log('确认分享到朋友圈');
     alert('用户确认分享');
   },
   cancel: function() {
     // 用户取消分享后执行的回调函数
+    console.log('取消分享到朋友圈');
     alert('用户取消分享');
   }
 });
