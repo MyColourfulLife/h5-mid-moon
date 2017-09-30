@@ -26,9 +26,12 @@ axios
         dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
         success: function() {
           // 用户确认分享后执行的回调函
+          alert(window.saytomoon);
         },
         cancel: function() {
           // 用户取消分享后执行的回调函数
+                
+                alert('用户取消了分享');
         }
       });
 
@@ -38,11 +41,11 @@ axios
         imgUrl: "images/sharedimg.jpg", // 分享图标
         success: function() {
           // 用户确认分享后执行的回调函数
-          alert(app.inputMessage);
+          alert(window.saytomoon);
         },
         cancel: function() {
           // 用户取消分享后执行的回调函数
-
+          alert('用户取消了分享');
         }
       });
 
