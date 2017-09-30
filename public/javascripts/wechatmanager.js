@@ -1,33 +1,4 @@
 
-// var wxglobleconfig = {};
-// wxglobleconfig.jsapi_ticket = "<%= wxconfig.jsapi_ticket %>";
-// wxglobleconfig.nonceStr = "<%= wxconfig.nonceStr %>";
-// wxglobleconfig.timestamp = "<%= wxconfig.timestamp %>";
-// wxglobleconfig.url = "<%- wxconfig.url %>";
-// wxglobleconfig.signature = "<%= wxconfig.signature %>";
-// wxglobleconfig.appId = "<%= wxconfig.appId %>";
-// wxglobleconfig.token = "<%= wxconfig.token %>";
-// wxglobleconfig.jsapi_ticket = [ 'chooseImage',
-//    'uploadImage',
-//    'menuItem:share:appMessage',
-//    'menuItem:share:timeline',
-//    'getNetworkType' ];
-
-// window.wxglobleconfig = wxglobleconfig;
-
-// console.log('绑定的微信配置',wxglobleconfig);
-
-//    // 微信配置
-//    wx.config(wxglobleconfig);
-
-//     wx.ready(function() {
-
-//       // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-//     });
-
-//     wx.error(function(res) {
-//       console.log("错误",res);
-//     });
 var configurl = window.location.href;
 
 var wechatconfig = `http://www.id-bear.com/node/moon/moon/wechatconfig?xxconfigurl=${configurl}`;
@@ -60,6 +31,24 @@ axios
           // 用户取消分享后执行的回调函数
         }
       });
+
+      wx.onMenuShareTimeline({
+        title: "中秋了，想说点啥", // 分享标题
+        link: "http://www.id-bear.com/node/moon/moon?name=小明&words=我想对你说", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: "images/sharedavator.jpg", // 分享图标
+        success: function() {
+          // 用户确认分享后执行的回调函数
+          console.log('确认分享到朋友圈');
+          alert('用户确认分享');
+        },
+        cancel: function() {
+          // 用户取消分享后执行的回调函数
+          console.log('取消分享到朋友圈');
+          alert('用户取消分享');
+        }
+      });
+
+
 
     });
 

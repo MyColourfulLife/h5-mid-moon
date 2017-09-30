@@ -76,29 +76,12 @@ router.get('/', function(req, res, next) {
     
   }
 
-  // var base_url = "http://275640e2.ngrok.io";
-
-  // var requesturl = req.originalUrl;
-  // var configurl = base_url + requesturl.split('#')[0];
-  
-  // var config = get_config(configurl);
-  // console.log('请求的url',requesturl,'要配置的url',configurl,'获得的配置',config);
 
   // 使用模型渲染网页
   res.render('index', { 
     avator:avator,
     words:words,
-    nickname:nickname,
-    // wxconfig:{
-    //   jsapi_ticket:config.jsapi_ticket,
-    //   nonceStr:config.nonceStr,
-    //   timestamp:config.timestamp,
-    //   url:config.url,
-    //   signature:config.signature,
-    //   appId:config.appId,
-    //   token:config.token,
-    //   jsApiList:config.jsApiList
-    // }
+    nickname:nickname
   });
 });
 

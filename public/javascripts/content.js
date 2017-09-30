@@ -3,55 +3,12 @@ var images = [];
 for (var i = 1; i <= 4; i++) {
   images.push(`./images/0${i}.png`);
 }
-// 获取 shareperson信息
-var sharedPerson = {
-  nickname: "沉香",
-  avator: "images/sharedavator.jpg",
-  words: `你站在桥上看风景, 
-         看风景的人在楼上看你;
-         明月装饰了你的窗子,
-         你装饰了别人的梦.`
-};
-var timer2 = null;
 
 // vue
 var app = new Vue({
   el: "#app",
   data: {
-    images: images,
-    sharedPerson: sharedPerson,
-    dmlists: [
-      {
-        nickname: "沉香",
-        avator: "images/sharedavator.jpg",
-        words: `你站在桥上看风景, 
-             看风景的人在楼上看你;
-             `
-      },
-      {
-        nickname: "秋香",
-        avator: "images/sharedavator.jpg",
-        words: `唐伯虎点秋香`
-      },
-      {
-        nickname: "siri",
-        avator: "images/sharedavator.jpg",
-        words: `你马上就要成功了`
-      },
-      {
-        nickname: "siri",
-        avator: "images/sharedavator.jpg",
-        words: `
-        明月装饰了你的窗子,
-        你装饰了别人的梦.`
-      },
-      {
-        nickname: "瘾君子",
-        avator: "images/sharedavator.jpg",
-        words: `
-        无关人员,请速速撤离`
-      }
-    ]
+    inputMessage:null
   },
   methods: {
     click_moon: function(event) {
@@ -59,6 +16,13 @@ var app = new Vue({
       console.log("到下一页");
       $("#page2").attr("hidden", false);
       $("#page2").addClass("animated slideInUp");
+    },
+    shoot:function () {
+      //发射弹幕
+      if (!this.inputMessage || this.inputMessage.length === 0) {
+        return;
+      }
+      $('.danmuArea').barrager(createDanmuItem(this.inputMessage,"avatorimgs/avator66.jpg",30,'red'));
     },
     click_crama: function(event) {
       console.log("wanna open carma");
