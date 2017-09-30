@@ -17,15 +17,14 @@ axios
       alert("ready alert")
        // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
       wx.onMenuShareAppMessage({
-        title: "ooooo", // 分享标题
-        desc: "1111", // 分享描述
-        link: "http://www.id-bear.com/node/moon/asdfadafsdasd", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: "", // 分享图标
+        title: "我偷偷的告诉你", // 分享标题
+        desc: "从月亮里发现一颗心", // 分享描述
+        link: `http://www.id-bear.com/node/moon/moon?saytomoon=${app.data.inputMessage}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: "images/sharedimg.jpg", // 分享图标
         type: "link", // 分享类型,music、video或link，不填默认为link
         dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
         success: function() {
           // 用户确认分享后执行的回调函
-          alert("sb");
         },
         cancel: function() {
           // 用户取消分享后执行的回调函数
@@ -33,18 +32,16 @@ axios
       });
 
       wx.onMenuShareTimeline({
-        title: "中秋了，想说点啥", // 分享标题
-        link: "http://www.id-bear.com/node/moon/moon?name=小明&words=我想对你说", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: "images/sharedavator.jpg", // 分享图标
+        title: "我把话都放月亮里，进来看看吧", // 分享标题
+        link: `http://www.id-bear.com/node/moon/moon?saytomoon=${app.data.inputMessage}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: "images/sharedimg.jpg", // 分享图标
         success: function() {
           // 用户确认分享后执行的回调函数
-          console.log('确认分享到朋友圈');
-          alert('用户确认分享');
+
         },
         cancel: function() {
           // 用户取消分享后执行的回调函数
-          console.log('取消分享到朋友圈');
-          alert('用户取消分享');
+
         }
       });
 

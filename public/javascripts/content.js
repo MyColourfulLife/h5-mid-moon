@@ -4,6 +4,7 @@ for (var i = 1; i <= 4; i++) {
   images.push(`./images/0${i}.png`);
 }
 
+
 // vue
 var app = new Vue({
   el: "#app",

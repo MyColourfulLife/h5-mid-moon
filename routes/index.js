@@ -59,7 +59,6 @@ router.get('/', function(req, res, next) {
   var words = "爸，我是真的好想你";
   var nickname = "撒哈拉";
 
-
   //微信服务器校验
   if (req.query.echostr) {
     console.log('收到微信校验',req.query);
@@ -67,13 +66,13 @@ router.get('/', function(req, res, next) {
     return;
   }
 
-
+  var randint = Math.random()*100%80+1
+  var randAvtor = `avatorimgs/avator${randint}.jpg`
   // 获取用户参数
-  if (req.query.nickname) {
-    avator = req.query.avator,
-    words = req.query.words,
-    nickname = req.query.nickname
-    
+  if (req.query.saytomoon) {
+    avator = randAvtor,
+    words = req.query.saytomoon,
+    nickname = "你的好友刚刚说"
   }
 
 
