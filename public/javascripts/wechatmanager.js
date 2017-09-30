@@ -5,7 +5,8 @@ var saytomoon = "";
 
 function show() {
   saytomoon = $('#inputsay').val();
-  alert('输入的内容是',$('#inputsay').val());
+  alert('输入的内容是',$('#inputsay').val(),'appinput',app.inputMessage);
+
 
 }
 
@@ -23,7 +24,7 @@ axios
     wx.config(wxglobleconfig);
 
     wx.ready(function() {
-      alert("ready alert")
+
        // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
       wx.onMenuShareAppMessage({
         title: "我偷偷的告诉你", // 分享标题
