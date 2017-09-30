@@ -43,7 +43,7 @@ axios
     wx.config(wxglobleconfig);
 
     wx.ready(function() {
-
+      alert("ready alert")
        // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
       wx.onMenuShareAppMessage({
         title: "ooooo", // 分享标题
