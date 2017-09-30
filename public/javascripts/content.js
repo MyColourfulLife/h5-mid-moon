@@ -89,11 +89,6 @@ var app = new Vue({
       $("#page4").attr("hidden", false);
       $("#page4").addClass("animated slideInUp");
 
-
-      setTimeout(function() {
-        alert('分享发射后的网页别人就可以看到你说的话了');
-      }, 1000);
-
     }
   }
 });
