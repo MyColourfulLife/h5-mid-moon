@@ -1,7 +1,5 @@
 
 var configurl = window.location.href;
-
-
 var wechatconfig = `http://www.id-bear.com/node/moon/moon/wechatconfig?xxconfigurl=${configurl}`;
 var wxglobleconfig = null;
 axios

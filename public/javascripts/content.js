@@ -97,6 +97,8 @@ var saytomoon = "";
 window.saytomoon = saytomoon;
 
 function show() {
+  var configurl = window.location.href;
+  var wechatconfig = `http://www.id-bear.com/node/moon/moon/wechatconfig?xxconfigurl=${configurl}`;
 
   window.saytomoon = app.inputMessage;
   wx.onMenuShareAppMessage({
