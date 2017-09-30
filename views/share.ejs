@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>分享你的心声</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <script src="./wechatmanager.js"></script>
+    <script src="./javascripts/wechatmanager.js"></script>
 </head>
 <body>
-    <div style="display:none"><img src="./sharedimg.jpg" alt=""/></div>
-    <img src="./H5.jpg" alt="" style="width:100%; height:auto">
+    <div style="display:none"><img src="images/sharedimg.jpg" alt=""/></div>
+    <img src="images/H5.jpg" alt="" style="width:100%; height:auto">
 
     <script>
         
@@ -39,7 +40,7 @@
           wx.onMenuShareTimeline({
             title: "我把话都放月亮里，进来看看吧", // 分享标题
             link: " <%-  shareUrl  %>  " , // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            imgUrl: "./sharedimg.jpg", // 分享图标
+            imgUrl: "images/sharedimg.jpg", // 分享图标
             success: function() {
               // 用户确认分享后执行的回调函数
             },
