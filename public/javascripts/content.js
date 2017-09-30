@@ -29,8 +29,6 @@ var app = new Vue({
       console.log("wanna open carma");
       $("#page3").attr("hidden", false);
 
-      $("#page3").addClass("animated slideInUp");
-
       // 1. 获取图像
 
       wx.chooseImage({
@@ -38,7 +36,6 @@ var app = new Vue({
         sizeType: ["compressed"], // 可以指定是原图还是压缩图，默认二者都有
         sourceType: ["camera"], // 可以指定来源是相册还是相机，默认二者都有
         success: function(res) {
-          console.log("拍照结果:", res);
 
           var localIds = res.localIds[0]; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
           // 2. 拿到图片 将图片上传
