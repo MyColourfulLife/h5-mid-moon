@@ -15,39 +15,23 @@ axios
     wx.config(wxglobleconfig);
 
     wx.ready(function() {
+      alert("隐藏不用的按钮");
+      wx.hideMenuItems({
+        menuList: [
+          "menuItem:share:qq",
+          "menuItem:share:weiboApp",
+          "menuItem:favorite",
+          "menuItem:share:facebook",
+          "/menuItem:share:QZone"
+        ], // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+        success: function(res) {
+          //alert("隐藏");
+        }
+      });
 
-      //  // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
-      // wx.onMenuShareAppMessage({
-      //   title: "我偷偷的告诉你", // 分享标题
-      //   desc: "月亮里有我说的话", // 分享描述
-      //   link: `http://www.id-bear.com/node/moon/moon?saytomoon=${window.saytomoon}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-      //   imgUrl: "images/sharedimg.jpg", // 分享图标
-      //   type: "link", // 分享类型,music、video或link，不填默认为link
-      //   dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
-      //   success: function() {
-      //     // 用户确认分享后执行的回调函
-      //   },
-      //   cancel: function() {
-      //     // 用户取消分享后执行的回调函数
-      //           alert('您取消了分享');
-      //   }
-      // });
-
-      // wx.onMenuShareTimeline({
-      //   title: "我把话都放月亮里，进来看看吧", // 分享标题
-      //   link: `http://www.id-bear.com/node/moon/moon?saytomoon=${window.saytomoon}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-      //   imgUrl: "images/sharedimg.jpg", // 分享图标
-      //   success: function() {
-      //     // 用户确认分享后执行的回调函数
-      //   },
-      //   cancel: function() {
-      //     // 用户取消分享后执行的回调函数
-      //     alert('您取消了分享');
-      //   }
-      // });
-
-
-
+      wx.showMenuItems({
+        menuList: ["onMenuShareAppMessage", "onMenuShareTimeline"] // 要显示的菜单项，所有menu项见附录3
+      });
     });
 
     wx.error(function(res) {

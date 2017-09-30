@@ -107,7 +107,9 @@ function createCoinfDynamic(url) {
       "menuItem:share:timeline",
       "getNetworkType",
       "onMenuShareTimeline",
-      "onMenuShareAppMessage"
+      "onMenuShareAppMessage",
+      "hideMenuItems",
+      "checkJsApi"
     ];
     signature.token = token;
     return signature;

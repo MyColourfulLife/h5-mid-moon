@@ -96,9 +96,8 @@ var app = new Vue({
 var saytomoon = "";
 window.saytomoon = saytomoon;
 
-
 function show() {
-  alert(app.inputMessage);
+
   window.saytomoon = app.inputMessage;
   wx.onMenuShareAppMessage({
     title: "我偷偷的告诉你", // 分享标题
@@ -113,7 +112,11 @@ function show() {
     cancel: function() {
       // 用户取消分享后执行的回调函数
             alert('您取消了分享');
-    }
+    },
+    trigger: function (res) {
+      // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+      alert("点击分享朋友"+res);
+  },
   });
 
 
