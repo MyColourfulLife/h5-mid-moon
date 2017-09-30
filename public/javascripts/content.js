@@ -26,14 +26,7 @@ var app = new Vue({
       }
       $('.danmuArea').barrager(createDanmuItem(this.inputMessage,"avatorimgs/avator66.jpg",30,'red',0));
 
-
-      setTimeout(function () {
-        window.location.href = `http://www.id-bear.com/node/moon/moon?saytomoon=${this.inputMessage}`
-      },2000);
-
-      
-     
-
+        window.location.href = `http://www.id-bear.com/node/moon/moon?saytomoon=${this.inputMessage}`;
 
 
     },
@@ -95,6 +88,11 @@ var app = new Vue({
       console.log("点我发送");
       $("#page4").attr("hidden", false);
       $("#page4").addClass("animated slideInUp");
+
+
+      setTimeout(function() {
+        alert('分享发射后的网页别人就可以看到你说的话了');
+      }, 1000);
 
     }
   }
