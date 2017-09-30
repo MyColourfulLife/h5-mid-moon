@@ -3,7 +3,7 @@ function createDanmuItem(words,img='avatorimgs/avator66.jpg',bottom = 30,color =
   return {
   img:img, //图片 
   info:words, //文字 
-  close:true, //显示关闭按钮 
+  close:false, //显示关闭按钮 
   speed:speed, //延迟,单位秒,默认8
   bottom:bottom, //距离底部高度,单位px,默认随机 
   color:color, //颜色,默认白色 
@@ -12,8 +12,6 @@ function createDanmuItem(words,img='avatorimgs/avator66.jpg',bottom = 30,color =
 }
 
 var danmubottoms = [30,60];
-
-
 
 //每条弹幕发送间隔
 var looper_time=3*1000;

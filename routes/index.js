@@ -49,6 +49,20 @@ var encodeurl = encodeURIComponent(imgurl);
   });
 });
 
+router.get('/share',function (req,res) {
+  
+      var words = req.query.saytomoon;
+  
+      if (!words || words === "undefined") {
+        res.send("<h3>你的心一片空白</h3>");
+        return;
+      }
+  
+      res.render('share.ejs',{
+        shareUrl:`http://www.id-bear.com/node/moon/moon?saytomoon=${words}`
+      });
+  
+    });
 
 
 /* GET home page. */
