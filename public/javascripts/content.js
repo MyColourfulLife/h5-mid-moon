@@ -32,7 +32,7 @@ var app = new Vue({
         )
       );
 
-      window.location.href = `http://www.id-bear.com/node/moon/moon?saytomoon=${this
+      window.location.href = `http://www.id-bear.com/node/moon/share?saytomoon=${this
         .inputMessage}`;
     },
     playstop: function(event) {
