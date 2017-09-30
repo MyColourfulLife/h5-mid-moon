@@ -71,7 +71,7 @@ router.get('/', function(req, res, next) {
 // 默认数据
   var avator = "images/sharedavator.jpg";
   var words = "爸，我是真的好想你";
-  var nickname = "你的好友刚刚说";
+  var nickname = "——你的好友对你说";
 
   //微信服务器校验
   if (req.query.echostr) {
@@ -86,7 +86,7 @@ router.get('/', function(req, res, next) {
   if (req.query.saytomoon && req.query.saytomoon != 'null' && req.query.saytomoon.length > 0) {
     avator = randAvtor,
     words = req.query.saytomoon,
-    nickname = "你的好友刚刚说"
+    nickname = "——你的好友对你说"
   }
 
 
