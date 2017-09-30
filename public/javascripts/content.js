@@ -87,7 +87,7 @@ var app = new Vue({
               // 3. 如果拿到了图片地址 请求服务器验证
               var encodeurl = encodeURIComponent(imgurl);
 
-              var ismoonurl = `http://www.id-bear.com/node/moon/ismoon?imgurl=${imgurl}`;
+              var ismoonurl = `http://www.id-bear.com/node/moon/moon/ismoon?imgurl=${encodeurl}`;
 
               axios
                 .get(ismoonurl)
