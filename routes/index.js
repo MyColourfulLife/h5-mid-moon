@@ -66,10 +66,10 @@ router.get('/', function(req, res, next) {
     return;
   }
 
-  var randint = Math.random()*100%80+1
+  var randint = Math.round(Math.random()*100) % 80 + 1;
   var randAvtor = `avatorimgs/avator${randint}.jpg`
   // 获取用户参数
-  if (req.query.saytomoon) {
+  if (req.query.saytomoon && req.query.saytomoon != 'null') {
     avator = randAvtor,
     words = req.query.saytomoon,
     nickname = "你的好友刚刚说"
