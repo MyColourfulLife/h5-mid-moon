@@ -4,12 +4,14 @@ for (var i = 1; i <= 4; i++) {
   images.push(`./images/0${i}.png`);
 }
 
-
 var saytomoon = "";
+window.saytomoon = saytomoon;
+
 
 function show() {
   saytomoon = app.inputMessage;
-  alert(saytomoon);
+  window.saytomoon = app.inputMessage;
+  alert(window.saytomoon);
 }
 // vue
 var app = new Vue({
