@@ -26,6 +26,15 @@
   <div id="app">
     <div class="mycontainer wrap">
 
+      
+      <button v-on:click="playstop" type="button" class="btn btn-default btn-sm"> <span id="playstop" class="glyphicon glyphicon-volume-off" aria-hidden="true" v-on:click="playstop"></span> </button>
+      <!-- <span id="playstop" class="glyphicon glyphicon-volume-off" aria-hidden="true" v-on:click="playstop"></span> -->
+      <!-- glyphicon glyphicon-volume-up -->
+
+      <audio id="bgMusic" loop="true" autoplay="true">
+        <source=s rc="bgm.mp3" type="audio/mp3">
+      </audio>
+
         <!-- 第一页 -->
 
         <div class="page-one item ">

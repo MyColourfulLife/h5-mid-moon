@@ -230,3 +230,7 @@ body {
   width: 30px;
   height: 30px;
 }
+
+button.btn.btn-default.btn-sm {
+  float: right;
+}
