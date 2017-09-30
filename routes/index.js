@@ -21,7 +21,7 @@ router.get('/wechatconfig',function (req,res) {
  * 需要图片地址参数
  */
 router.get('/ismoon',function (req,res) {
-  
+  console.log('收到一条请求');
   var imgurl = req.query.imgurl;
   if (!imgurl) {
     res.json({
@@ -32,15 +32,15 @@ router.get('/ismoon',function (req,res) {
   
   var requesturl = `http://119.23.153.216:80/api/get_image_class_url?image_url=${imgurl}&model_name=moon_model`
   console.log('要识别的url',requesturl);
-  axios.get(requesturl).then(function (res) {
+  axios.get(requesturl).then(function (response) {
     
-    console.log(res);
-
+    var ismoon = response.data.recResult[0].imageClass === "moon";
+    console.log(ismoon);
     res.json({
-      isMoon:res.data.recResult.imageClass === "moon"
+      isMoon:ismoon
     });
 
-  }).chatch(function (err) {
+  }).catch(function (err) {
     console.log(err);
     res.send(err);
   });
