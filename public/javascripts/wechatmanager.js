@@ -4,11 +4,8 @@ var configurl = window.location.href;
 var saytomoon = "";
 
 function show() {
-  saytomoon = $('#inputsay').val();
   alert('输入的内容是',$('#inputsay').val());
-  alert('appinput',app.inputMessage);
-
-
+  alert('appinput',app.data);
 }
 
 
