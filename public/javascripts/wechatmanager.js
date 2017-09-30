@@ -3,9 +3,7 @@ var configurl = window.location.href;
 
 var saytomoon = "";
 
-function show() {
-  alert('输入的内容是',$('#inputsay').val());
-}
+
 
 
 var wechatconfig = `http://www.id-bear.com/node/moon/moon/wechatconfig?xxconfigurl=${configurl}`;
