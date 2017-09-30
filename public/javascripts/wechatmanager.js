@@ -1,6 +1,15 @@
 
 var configurl = window.location.href;
 
+var saytomoon = "";
+
+function show() {
+  saytomoon = $('#inputsay').val();
+  alert('输入的内容是',saytomoon);
+
+}
+
+
 var wechatconfig = `http://www.id-bear.com/node/moon/moon/wechatconfig?xxconfigurl=${configurl}`;
 var wxglobleconfig = null;
 axios

@@ -91,7 +91,7 @@
 
             <div class="input-content"> 
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="要来一发吗？" v-model="inputMessage">
+                <input type="text" class="form-control" placeholder="要来一发吗？" v-model="inputMessage" onblur="show()" id="inputsay">
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button" v-on:click="shoot">发射</button>
                 </span>
