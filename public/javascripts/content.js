@@ -122,6 +122,7 @@ var saytomoon = "";
 window.saytomoon = saytomoon;
 
 function show() {
+  alert(app.inputMessage);
   window.saytomoon = app.inputMessage;
   wx.onMenuShareAppMessage({
     title: "我偷偷的告诉你", // 分享标题
