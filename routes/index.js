@@ -30,7 +30,10 @@ router.get('/ismoon',function (req,res) {
     return;
   }
   
-  var requesturl = `http://119.23.153.216:80/api/get_image_class_url?image_url=${imgurl}&model_name=moon_model`
+
+var encodeurl = encodeURIComponent(imgurl);
+
+  var requesturl = `http://119.23.153.216:80/api/get_image_class_url?image_url=${encodeurl}&model_name=moon_model`
   console.log('要识别的url',requesturl);
   axios.get(requesturl).then(function (response) {
     

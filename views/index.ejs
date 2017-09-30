@@ -85,9 +85,21 @@
             <div class="showwordempty">
 
             </div>
-            <div class="input-content">
+            <!-- <div class="input-content">
               <input type="text" class="form-control" placeholder="要来一发吗？" aria-describedby="basic-addon1">
+            </div> -->
+
+            <div class="input-content"> 
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="要来一发吗？">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" v-click:shootDanmu>发射</button>
+                </span>
+              </div><!-- /input-group -->
             </div>
+
+            
+
 
             <div class="shareTips">
               <h5>输入完成后点击右上角分享至朋友或朋友圈</h5>
