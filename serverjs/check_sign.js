@@ -105,7 +105,9 @@ function createCoinfDynamic(url) {
       "uploadImage",
       "menuItem:share:appMessage",
       "menuItem:share:timeline",
-      "getNetworkType"
+      "getNetworkType",
+      "onMenuShareTimeline",
+      "onMenuShareAppMessage"
     ];
     signature.token = token;
     return signature;
