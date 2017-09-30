@@ -5,7 +5,7 @@ var saytomoon = "";
 
 function show() {
   saytomoon = $('#inputsay').val();
-  alert('输入的内容是',saytomoon);
+  alert('输入的内容是',$('#inputsay').val());
 
 }
 
