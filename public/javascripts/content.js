@@ -4,6 +4,9 @@ for (var i = 1; i <= 4; i++) {
   images.push(`./images/0${i}.png`);
 }
 
+$("#page2").attr("hidden", false);
+$("#page3").attr("hidden", false);
+$("#page4").attr("hidden", false);
 
 // vue
 var app = new Vue({
@@ -15,7 +18,7 @@ var app = new Vue({
     click_moon: function(event) {
       // this 指当前 app实例 就是上面 var app = 。。。
       console.log("到下一页");
-      $("#page2").attr("hidden", false);
+      
       $("#page2").addClass("animated slideInUp");
     },
     shoot:function () {
@@ -26,8 +29,8 @@ var app = new Vue({
       $('.danmuArea').barrager(createDanmuItem(this.inputMessage,"avatorimgs/avator66.jpg",30,'red'));
     },
     click_crama: function(event) {
-      console.log("wanna open carma");
-      $("#page3").attr("hidden", false);
+     
+      
 
       // 1. 获取图像
 
@@ -56,7 +59,6 @@ var app = new Vue({
                 .then(
                   // 如果成功，
                   function(res) {
-                    alert(res);
                     if (res.data.message) {
                       alert("亲，好像出问题，你可以换个试试");
                       return;
@@ -81,7 +83,7 @@ var app = new Vue({
     },
     click_send: function(event) {
       console.log("点我发送");
-      $("#page4").attr("hidden", false);
+      
       $("#page4").addClass("animated slideInUp");
 
       // donmutwo();
