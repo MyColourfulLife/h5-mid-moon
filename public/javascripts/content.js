@@ -24,7 +24,7 @@ var app = new Vue({
       if (!this.inputMessage || this.inputMessage.length === 0) {
         return;
       }
-      location.href = `http://www.id-bear.com/node/moon/moon?saytomoon=${this.inputMessage}`
+      window.location.href = `http://www.id-bear.com/node/moon/moon?saytomoon=${this.inputMessage}`
       $('.danmuArea').barrager(createDanmuItem(this.inputMessage,"avatorimgs/avator66.jpg",30,'red'));
     },
     click_crama: function(event) {
@@ -103,7 +103,7 @@ function show() {
   wx.onMenuShareAppMessage({
     title: "我偷偷的告诉你", // 分享标题
     desc: "月亮里有我说的话", // 分享描述
-    link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    link: window.location.href , // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
     imgUrl: "images/sharedimg.jpg", // 分享图标
     type: "link", // 分享类型,music、video或link，不填默认为link
     dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
@@ -123,7 +123,7 @@ function show() {
 
   wx.onMenuShareTimeline({
     title: "我把话都放月亮里，进来看看吧", // 分享标题
-    link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    link: window.location.href , // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
     imgUrl: "images/sharedimg.jpg", // 分享图标
     success: function() {
       // 用户确认分享后执行的回调函数
