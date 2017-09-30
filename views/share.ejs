@@ -7,7 +7,6 @@
     <title>我有几句话藏在月亮里想对你说</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <script src="./javascripts/wechatmanager.js"></script>
     <link rel="stylesheet" href="share.css">
 </head>
 <body >
@@ -21,8 +20,42 @@
     <script>
         
         var url = " <%-  shareUrl  %>  ";
-        
-        wx.onMenuShareAppMessage({
+
+var configurl = window.location.href;
+var wechatconfig = `http://www.id-bear.com/node/moon/moon/wechatconfig?xxconfigurl=${configurl}`;
+
+axios
+  .get(wechatconfig)
+  .then(function(response) {
+    wxglobleconfig = response.data;
+    //获取微信配置
+    console.log('微信配置',wxglobleconfig);
+
+    // 微信配置
+    wx.config(wxglobleconfig);
+
+    wx.ready(function() {
+      wx.hideMenuItems({
+        menuList: [
+          "menuItem:share:qq",
+          "menuItem:share:weiboApp",
+          "menuItem:favorite",
+          "menuItem:share:facebook",
+          "menuItem:share:QZone",
+          "menuItem:openWithSafari",
+          "menuItem:share:brand"
+        ], // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+        success: function(res) {
+          //alert("隐藏");
+        }
+      });
+
+      wx.showMenuItems({
+        menuList: ["onMenuShareAppMessage", "onMenuShareTimeline"] // 要显示的菜单项，所有menu项见附录3
+      });
+
+
+      wx.onMenuShareAppMessage({
             title: "我偷偷的告诉你", // 分享标题
             desc: "月亮里有我说的话", // 分享描述
             link: url , // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
@@ -55,6 +88,20 @@
             }
           });
 
+    });
+
+
+
+    wx.error(function(res) {
+      console.log("错误",res);
+    });
+  })
+  .catch(function(error) {
+    console.log("获取配置出错");
+  });
+
+        
+       
         </script>
 
 </body>
