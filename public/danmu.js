@@ -1,10 +1,10 @@
 
-function createDanmuItem(words,img='avatorimgs/avator66.jpg',bottom = 30,color = 'white') {
+function createDanmuItem(words,img='avatorimgs/avator66.jpg',bottom = 30,color = 'white',speed=10) {
   return {
   img:img, //图片 
   info:words, //文字 
   close:true, //显示关闭按钮 
-  speed:10, //延迟,单位秒,默认8
+  speed:speed, //延迟,单位秒,默认8
   bottom:bottom, //距离底部高度,单位px,默认随机 
   color:color, //颜色,默认白色 
   old_ie_color:'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 

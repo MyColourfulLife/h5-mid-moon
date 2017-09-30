@@ -24,10 +24,17 @@ var app = new Vue({
       if (!this.inputMessage || this.inputMessage.length === 0) {
         return;
       }
+      $('.danmuArea').barrager(createDanmuItem(this.inputMessage,"avatorimgs/avator66.jpg",30,'red',0));
 
 
-      window.location.href = `http://www.id-bear.com/node/moon/moon?saytomoon=${this.inputMessage}`
-      $('.danmuArea').barrager(createDanmuItem(this.inputMessage,"avatorimgs/avator66.jpg",30,'red'));
+      setTimeout(function () {
+        window.location.href = `http://www.id-bear.com/node/moon/moon?saytomoon=${this.inputMessage}`
+      },2000);
+
+      
+     
+
+
 
     },
     click_crama: function(event) {
