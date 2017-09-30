@@ -15,14 +15,15 @@ axios
     wx.config(wxglobleconfig);
 
     wx.ready(function() {
-      alert("隐藏不用的按钮");
       wx.hideMenuItems({
         menuList: [
           "menuItem:share:qq",
           "menuItem:share:weiboApp",
           "menuItem:favorite",
           "menuItem:share:facebook",
-          "/menuItem:share:QZone"
+          "menuItem:share:QZone",
+          "menuItem:openWithSafari",
+          "menuItem:share:brand"
         ], // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
         success: function(res) {
           //alert("隐藏");
