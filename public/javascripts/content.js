@@ -126,8 +126,8 @@ var app = new Vue({
         //         .catch(function (err) {
         //           alert('唉哟，出错了:<',err);
         //         });
-        //     }
-        //   });
+            }
+          });
         },
         fail: function(err) {
           console.log('拍照出错:',err);
