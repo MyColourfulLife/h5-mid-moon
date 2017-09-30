@@ -26,12 +26,12 @@
   <div id="app">
     <div class="mycontainer wrap">
       
-      <button v-on:click="playstop" type="button" class="btn btn-default btn-sm"> <span id="playstop" class="glyphicon glyphicon-volume-off" aria-hidden="true" v-on:click="playstop"></span> </button>
+      <!-- <button v-on:click="playstop" type="button" class="btn btn-default btn-sm"> <span id="playstop" class="glyphicon glyphicon-volume-off" aria-hidden="true" v-on:click="playstop"></span> </button> -->
       <!-- <span id="playstop" class="glyphicon glyphicon-volume-off" aria-hidden="true" v-on:click="playstop"></span> -->
       <!-- glyphicon glyphicon-volume-up -->
-      <audio id="bgMusic" preload autoplay loop="loop" >
+      <!-- <audio id="bgMusic" preload autoplay loop="loop" >
         <source src="bgm.mp3" type="audio/mp3">
-      </audio>
+      </audio> -->
 
         <!-- 第一页 -->
 
@@ -133,8 +133,23 @@
   <script src="./javascripts/iSlider.js"></script>
   <script src="./javascripts/content.js"></script>
   
-
-
+  <audio id="Jaudio" class="media-audio" src="bgm.mp3" preload loop="loop"></audio >
+    
+  <script>
+    function audioAutoPlay(id){
+      var audio = document.getElementById(id);
+      audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function() {
+          audio.play();
+        }, false);
+    }
+    audioAutoPlay('Jaudio');
+    </script>
+    
+  
 
 </body>
 
