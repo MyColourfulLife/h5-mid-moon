@@ -5,9 +5,12 @@ for (var i = 1; i <= 4; i++) {
 }
 
 
+var saytomoon = "";
 
-
-
+function show() {
+  saytomoon = app.inputMessage;
+  alert(saytomoon);
+}
 // vue
 var app = new Vue({
   el: "#app",
