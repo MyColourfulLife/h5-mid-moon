@@ -1,14 +1,3 @@
-// 循环发送弹幕
-var damnitem = {
-  img:'images/sharedavator.jpg', //图片 
-  info:'这是一条弹幕', //文字 
-  href:'http://www.yaseng.org', //链接 
-  close:true, //显示关闭按钮 
-  speed:8, //延迟,单位秒,默认8
-  bottom:60, //距离底部高度,单位px,默认随机 
-  color:'white', //颜色,默认白色 
-  old_ie_color:'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色 
-}
 
 function createDanmuItem(words,img,bottom = 30) {
   return {
@@ -22,7 +11,7 @@ function createDanmuItem(words,img,bottom = 30) {
   }
 }
 
-var danmubottoms = [30,60,90,120,150];
+var danmubottoms = [30,60];
 
 
 
