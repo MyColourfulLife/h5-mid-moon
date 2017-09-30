@@ -4,9 +4,9 @@ for (var i = 1; i <= 4; i++) {
   images.push(`./images/0${i}.png`);
 }
 
-$("#page2").attr("hidden", false);
-$("#page3").attr("hidden", false);
-$("#page4").attr("hidden", false);
+$("#page2").attr("hidden", true);
+$("#page3").attr("hidden", true);
+$("#page4").attr("hidden", true);
 
 // vue
 var app = new Vue({
