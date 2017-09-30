@@ -84,7 +84,7 @@
                             alert('您取消了分享' + url);
                         }
 
-                    }
+                    };
 
                     setTimeout(function () {
                         // 分享到朋友圈
@@ -99,9 +99,10 @@
                         console.log("错误", res);
                     });
                 })
-                    .catch(function (error) {
-                        console.log("获取配置出错");
-                    });
+            })
+            .catch(function (error) {
+                console.log("获取配置出错");
+            });
     </script>
 
 </body>
