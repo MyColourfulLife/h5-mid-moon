@@ -29,7 +29,8 @@
 //       console.log("错误",res);
 //     });
 var configurl = window.location.href;
-var wechatconfig = `http://275640e2.ngrok.io/moon/wechatconfig?xxconfigurl=${configurl}`;
+
+var wechatconfig = `http://www.id-bear.com/node/moon/moon/wechatconfig?xxconfigurl=${configurl}`;
 var wxglobleconfig = null;
 axios
   .get(wechatconfig)
