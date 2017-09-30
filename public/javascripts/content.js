@@ -93,7 +93,7 @@ var app = new Vue({
               .then(
                 // 如果成功，
                 function(res) {
-                  //  1. 显示下一页 需要获取的数据 包括 别人的话 弹幕 等 网页加载完就先请求，到时候只是显示数据
+              
                   alert(res);
                   if (res.data.message) {
                     alert('亲，好像出问题，你可以换个试试');
@@ -110,27 +110,6 @@ var app = new Vue({
               .catch(function (err) {
                 alert(err);
               });
-
-
-              // var ismoonurl = "http://119.23.153.216:80/api/get_image_class_url";
-              // axios({
-              //   methods:'get',
-              //   url:ismoonurl,
-              //   params:{
-              //     model_name:"moon_model",
-              //     image_url:encodeurl
-              //   }
-              // }).then(function (res) {
-              //   alert(res);
-              // }).catch(function (err) {
-              //   alert(err);
-              // });
-
-              
-              // var ismoonurl = 'http://119.23.153.216:80/api/get_image_class_url?image_url=http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=ACTA4Kzej771dzDcgNwS7pOxsqspovdJ7FxA30bckrCKafIQcg-NXbxUE6MZGzbb_mupYE59pItBQyVySYZOsAVbyeXhFMATzEKMuWFoansOHwknSMNhFj7oDuNIX6JYWVUfAHAPON%26media_id=FOHp54Yw5nGAZpDwH_OJHnjfcNRXqp-FRlXqbqvFCsYpaxKhYLPp7nZOHo5GbFyB&model_name=moon_model';
-             
-            
-
 
             }
           });
@@ -253,3 +232,19 @@ function donmutwo() {
 }
 
 donmutwo();
+
+//***************************************************************** */
+// 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+wx.onMenuShareTimeline({
+  title: "中秋了，想说点啥", // 分享标题
+  link: "http://www.id-bear.com/node/moon/moon?name=小明&words=我想对你说", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+  imgUrl: "images/sharedavator.jpg", // 分享图标
+  success: function() {
+    // 用户确认分享后执行的回调函数
+    alert('用户确认分享');
+  },
+  cancel: function() {
+    // 用户取消分享后执行的回调函数
+    alert('用户取消分享');
+  }
+});
