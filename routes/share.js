@@ -20,6 +20,16 @@ router.get('/',function (req,res) {
         res.send("<h3>你的心一片空白</h3>");
         return;
       }
+
+      if (req.query.from) {
+          res.render('index.js',{ 
+            avator:"",
+            words:words,
+            nickname:"——你的好友对你说"
+          });
+          return;
+      }
+
   
       res.render('share.ejs',{
         shareUrl:`http://www.id-bear.com/node/moon/moon?saytomoon=${words}`

@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 
 // 默认数据
   var avator = "images/sharedavator.jpg";
-  var words = "爸，我是真的好想你";
+  var words = "我是真的好想你";
   var nickname = "——你的好友对你说";
 
   //微信服务器校验
