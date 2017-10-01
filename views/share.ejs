@@ -39,11 +39,11 @@
                 wx.ready(function () {
                     wx.hideMenuItems({
                         menuList: [
-                            // "menuItem:share:qq",
+                            "menuItem:share:qq",
                             "menuItem:share:weiboApp",
                             "menuItem:favorite",
                             "menuItem:share:facebook",
-                            // "menuItem:share:QZone",
+                            "menuItem:share:QZone",
                             "menuItem:openWithSafari",
                             "menuItem:share:brand"
                         ], // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
@@ -52,9 +52,9 @@
                         }
                     });
 
-                    // wx.showMenuItems({
-                    //     menuList: ["onMenuShareAppMessage", "onMenuShareTimeline"] // 要显示的菜单项，所有menu项见附录3
-                    // });
+                    wx.showMenuItems({
+                        menuList: ["onMenuShareAppMessage", "onMenuShareTimeline"] // 要显示的菜单项，所有menu项见附录3
+                    });
 
                     var initWxShareTimeObj = {
                         title: "我有几句话藏在月亮里想对你说", // 分享标题
