@@ -126,7 +126,7 @@ function show() {
   window.saytomoon = app.inputMessage;
   var onMenuShareAppMessageObj = {
     title: "我有几句话藏在月亮里想对你说", // 分享标题
-    desc: "有没有想对我说的", // 分享描述
+    desc: "明月寄相思 天涯共此时", // 分享描述
     link:  `http://www.id-bear.com/node/moon/moon?saytomoon=${app.inputMessage}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
     imgUrl: "images/sharedimg.jpg", // 分享图标
     type: "link", // 分享类型,music、video或link，不填默认为link
