@@ -32,10 +32,6 @@ axios
       });
     });
 
-
-
-  setTimeout(function () {
-
     var initWxShareTimeObj = {
       title: "我有几句话藏在月亮里想对你说", // 分享标题
       link: sharedurl, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
@@ -65,6 +61,9 @@ axios
       }
 
   };
+
+
+  setTimeout(function () {
 
       // 分享到朋友圈
       wx.onMenuShareTimeline(initWxShareTimeObj);
