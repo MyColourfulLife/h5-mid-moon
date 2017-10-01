@@ -57,7 +57,7 @@ axios
       },
       cancel: function () {
           // 用户取消分享后执行的回调函数
-          alert('您取消了分享' + url);
+          alert('您取消了分享');
       }
 
   };
@@ -77,7 +77,7 @@ axios
     });
   })
   .catch(function(error) {
-    console.log("获取配置出错");
+    console.log("获取配置出错",error);
   });
 
 
