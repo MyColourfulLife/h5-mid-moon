@@ -3,8 +3,12 @@ var axios = require("axios");
 var jsonfile = require("jsonfile");
 
 // 获取 accesss_token
-var appid = "wx0ec218cba03bd6ea";
-var secret = "97d5d87a812f1184c347ee7f489ab9e7";
+// var appid = "wx0ec218cba03bd6ea";//测试号
+// var secret = "97d5d87a812f1184c347ee7f489ab9e7";//测试号
+var appid = "wxaa22737c04cc7bb9";
+var secret = "212a165fc04f3ac9317e19bbcfdd69c1";
+
+
 var token_url = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`;
 var config_url = "http://275640e2.ngrok.io/";
 var signjson = "./serverjs/sign.json";
