@@ -122,37 +122,45 @@ var saytomoon = "";
 window.saytomoon = saytomoon;
 
 function show() {
-  window.saytomoon = app.inputMessage;
-  wx.onMenuShareAppMessage({
-    title: "我有几句话藏在月亮里想对你说", // 分享标题
-    desc: "有没有什么想对我说的", // 分享描述
-    link:  `http://www.id-bear.com/node/moon/moon?saytomoon=${app.inputMessage}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    imgUrl: "images/sharedimg.jpg", // 分享图标
-    type: "link", // 分享类型,music、video或link，不填默认为link
-    dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
-    success: function() {
-      // 用户确认分享后执行的回调函
-    },
-    cancel: function() {
-      // 用户取消分享后执行的回调函数
-      alert("您取消了分享");
-    },
-    trigger: function(res) {
-      // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
-      alert("点击分享朋友" + res.data);
-    }
-  });
+  setTimeout(function() {
 
-  wx.onMenuShareTimeline({
-    title: "我有几句话藏在月亮里想对你说", // 分享标题
-    link: `http://www.id-bear.com/node/moon/moon?saytomoon=${app.inputMessage}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    imgUrl: "images/sharedimg.jpg", // 分享图标
-    success: function() {
-      // 用户确认分享后执行的回调函数
-    },
-    cancel: function() {
-      // 用户取消分享后执行的回调函数
-      alert("您取消了分享");
-    }
-  });
+    window.saytomoon = app.inputMessage;
+    var onMenuShareAppMessageObj = {
+      title: "我有几句话藏在月亮里想对你说", // 分享标题
+      desc: "有没有想对我说的", // 分享描述
+      link:  `http://www.id-bear.com/node/moon/moon?saytomoon=${app.inputMessage}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: "images/sharedimg.jpg", // 分享图标
+      type: "link", // 分享类型,music、video或link，不填默认为link
+      dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
+      success: function() {
+        // 用户确认分享后执行的回调函
+      },
+      cancel: function() {
+        // 用户取消分享后执行的回调函数
+        alert("您取消了分享");
+      },
+      trigger: function(res) {
+        // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+      }
+    };
+  
+    var onMenuShareTimelineOjb = {
+      title: "我有几句话藏在月亮里想对你说", // 分享标题
+      link: `http://www.id-bear.com/node/moon/moon?saytomoon=${app.inputMessage}`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: "images/sharedimg.jpg", // 分享图标
+      success: function() {
+        // 用户确认分享后执行的回调函数
+      },
+      cancel: function() {
+        // 用户取消分享后执行的回调函数
+        alert("您取消了分享");
+      }
+    };
+
+
+    wx.onMenuShareAppMessage(onMenuShareAppMessageObj);
+    wx.onMenuShareTimeline(onMenuShareTimelineOjb);
+  }, 2000);
+
+  
 }
